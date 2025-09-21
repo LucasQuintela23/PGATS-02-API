@@ -1,5 +1,5 @@
 // services/userService.js
-const { users } = require('../models/userModel');
+import { users } from '../models/userModel.js';
 
 function registerUser({ username, password, favorecidos = [] }) {
   if (users.find(u => u.username === username)) {
@@ -21,4 +21,4 @@ function getUsers() {
   return users;
 }
 
-module.exports = { registerUser, loginUser, getUsers };
+export default { registerUser, loginUser, getUsers };

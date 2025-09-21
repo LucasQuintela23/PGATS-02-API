@@ -1,7 +1,7 @@
 // controllers/transferController.js
-const express = require('express');
+import express from 'express';
+import transferService from '../services/transferService.js';
 const router = express.Router();
-const transferService = require('../services/transferService');
 
 router.post('/', (req, res) => {
   try {
@@ -16,4 +16,4 @@ router.get('/', (req, res) => {
   res.json(transferService.getTransfers());
 });
 
-module.exports = router;
+export default router;

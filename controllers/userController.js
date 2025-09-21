@@ -1,7 +1,7 @@
 // controllers/userController.js
-const express = require('express');
+import express from 'express';
+import userService from '../services/userService.js';
 const router = express.Router();
-const userService = require('../services/userService');
 
 router.post('/register', (req, res) => {
   try {
@@ -25,4 +25,4 @@ router.get('/', (req, res) => {
   res.json(userService.getUsers());
 });
 
-module.exports = router;
+export default router;

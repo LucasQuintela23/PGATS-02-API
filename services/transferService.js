@@ -1,6 +1,6 @@
 // services/transferService.js
-const { transfers } = require('../models/transferModel');
-const { users } = require('../models/userModel');
+import { transfers } from '../models/transferModel.js';
+import { users } from '../models/userModel.js';
 
 function transfer({ from, to, value }) {
   const sender = users.find(u => u.username === from);
@@ -19,4 +19,4 @@ function getTransfers() {
   return transfers;
 }
 
-module.exports = { transfer, getTransfers };
+export default { transfer, getTransfers };
